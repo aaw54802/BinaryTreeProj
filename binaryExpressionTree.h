@@ -9,8 +9,8 @@
 class binaryExpressionTree : public binaryTreeType<std::string> {
 public:
     bool search(const std::string& searchItem) const override { return false; }
-    void insert(const std::string& insertItem) override { /* Not used for expression tree */ }
-    void deleteNode(const std::string& deleteItem) override { /* Not used for expression tree */ }
+    void insert(const std::string& insertItem) override { /* Not used in expression tree */ }
+    void deleteNode(const std::string& deleteItem) override { /* Not used in expression tree */ }
 
     void buildTree(const std::string& postfixExpression);
     double evaluate() const;

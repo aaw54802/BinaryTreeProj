@@ -1,12 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "binaryExpressionTree.h"  // Include your binaryExpressionTree class header
+#include "binaryExpressionTree.h"
 
 using namespace std;
 
 int read() {
-    // Open the file containing postfix expressions
+    // Opens the file containing postfix expressions
     ifstream inFile("RpnData.txt");
     if (!inFile) {
         cerr << "Error: Could not open RpnData.txt" << endl;
@@ -14,17 +14,17 @@ int read() {
     }
 
     string expression;
-    // Read each line (each postfix expression) from the file
+    // Reads each postfix expression from the file
     while (getline(inFile, expression)) {
         cout << "Processing expression: " << expression << endl;
 
-        // Create a binaryExpressionTree instance
+        // Creates a binaryExpressionTree instance
         binaryExpressionTree exprTree;
 
-        // Build the tree based on the postfix expression
+        // Builds the tree based on the postfix expression
         exprTree.buildTree(expression);
 
-        // Evaluate the expression tree and display the result
+        // Evaluates the expression tree and display the result
         try {
             double result = exprTree.evaluate();
             cout << "Result: " << result << endl;
@@ -36,7 +36,7 @@ int read() {
         cout << "---------------------------------" << endl;
     }
 
-    // Close the file
+    // Closes the file
     inFile.close();
 
     return 0;
